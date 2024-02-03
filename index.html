@@ -1,0 +1,76 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+    <title>Booksky</title>
+    <body>
+        <div id="two">
+            <div id="one">
+                <h2 id="k">Add Book</h2>
+                <input id="b" placeholder="Book title">
+                <input id="c" placeholder="Book Author">
+                <input id="d" placeholder="Short Descreption...">
+                <button id="z" onclick="both()">ADD</button>
+                <button id="e" onclick="closepopup()">CANCEL</button>
+            </div>
+        </div>
+    <div id="ak">  
+        <h1 id="a">Booksky</h1>
+    </div>
+        <button id="l" onclick="popup()">+</button>
+        <div id="y"></div>
+    </body>
+</html>
+<script>
+    var i=document.getElementById("two")
+    var j=document.getElementById("one")
+    var f=document.getElementById("b")
+    var g=document.getElementById("c")
+    var h=document.getElementById("d")
+    function popup()
+    {
+        f.value=""
+        g.value=""
+        h.value=""
+        i.style.display="block"
+        j.style.display="block"
+    }
+    function closepopup()
+    {
+        i.style.display="none"
+        j.style.display="none"
+    }
+    function add()
+    {
+        var w=document.getElementById("y")
+        var ab=document.createElement("div")
+        ab.id="main"
+        var r=document.createElement("h2")
+        r.id="m"
+        r.innerHTML=f.value
+        var s=document.createElement("h4")
+        s.id="n"
+        s.innerHTML=g.value
+        var t=document.createElement("p")
+        t.id="o"
+        t.innerHTML=h.value
+        var u=document.createElement("button")
+        u.textContent="Delete"
+        u.id="p"
+        ab.appendChild(r)
+        ab.appendChild(s)
+        ab.appendChild(t)
+        ab.appendChild(u)
+        w.appendChild(ab)
+        u.addEventListener("click",function(){
+            ab.removeChild(r)
+            ab.removeChild(s)
+            ab.removeChild(t)
+            ab.removeChild(u)
+            w.removeChild(ab)
+        })
+    }
+    function both()
+    {
+        add()
+        closepopup()
+    }
+</script>
